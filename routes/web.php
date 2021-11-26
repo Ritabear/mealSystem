@@ -16,3 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/index', function () {
+    return view('index');
+});
+
+// 404 跳回首頁
+Route::fallback(function () {
+    var_dump('<script>alert("404");</script>');
+
+    return redirect();
+});
