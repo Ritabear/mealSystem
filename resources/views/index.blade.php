@@ -7,8 +7,13 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <!-- Bootstrap CSS -->
-    {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> --}}
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -254,25 +259,27 @@
                         // echo $sql_rocerds;
 
                         //執行查詢操作、處理結果集
-                        $result = mysqli_query($link, $sql_rocerds);
-                        if (!$result) {
-                            exit('查詢sql語句執行失敗。錯誤信息：'.mysqli_error($link)); // 獲取錯誤信息
-                        }
 
-                        $dataHistory = mysqli_fetch_all($result, MYSQLI_ASSOC);
+                        // $result = mysqli_query($link, $sql_rocerds);
+                        // if (!$result) {
+                        //     exit('查詢sql語句執行失敗。錯誤信息：'.mysqli_error($link)); // 獲取錯誤信息
+                        // }
+
+                        // $dataHistory = mysqli_fetch_all($result, MYSQLI_ASSOC);
                         // var_dump($dataHistory);
-                    for ($i = 0; $i < count($dataHistory); ++$i) {
-                        echo '<tr>';
-                        echo '<td class="w-10">'.$i.'</td>';
-                        echo '<td class="w-20">'.$dataHistory[$i]['time'].'</td>';
-                        echo '<td class="w-15">'.$dataHistory[$i]['order_id'].'</td>';
-                        echo '<td>'.$dataHistory[$i]['name'].'</td>';
-                        echo '<td <td class="w-10">'.$dataHistory[$i]['money'].'</td>';
-                        echo '<td <td class="w-10">'.$dataHistory[$i]['amount'].'</td>';
-                        echo '<td>'.$dataHistory[$i]['total'].'</td>';
-                        echo '</tr>';
-                    }
-                ?> </tbody>
+                    // for ($i = 0; $i < count($dataHistory); ++$i) {
+                    //     echo '<tr>';
+                    //     echo '<td class="w-10">'.$i.'</td>';
+                    //     echo '<td class="w-20">'.$dataHistory[$i]['time'].'</td>';
+                    //     echo '<td class="w-15">'.$dataHistory[$i]['order_id'].'</td>';
+                    //     echo '<td>'.$dataHistory[$i]['name'].'</td>';
+                    //     echo '<td <td class="w-10">'.$dataHistory[$i]['money'].'</td>';
+                    //     echo '<td <td class="w-10">'.$dataHistory[$i]['amount'].'</td>';
+                    //     echo '<td>'.$dataHistory[$i]['total'].'</td>';
+                    //     echo '</tr>';
+                    // }
+                // ?>
+                    </tbody>
                 </table>
             </div>
         </div>

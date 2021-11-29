@@ -52,8 +52,8 @@ class LoginController extends Controller
     {
         $user = Socialite::driver('google')->user();
 
+        // dd($user);
         $this->_registerOrLoginUser($user);
-        dd($user);
 
         // Return home after login
         return redirect()->route('home');
@@ -69,7 +69,7 @@ class LoginController extends Controller
     public function handleFacebookCallback()
     {
         $user = Socialite::driver('facebook')->user();
-
+        dd($user);
         $this->_registerOrLoginUser($user);
 
         // Return home after login
@@ -86,6 +86,7 @@ class LoginController extends Controller
     public function handleGithubCallback()
     {
         $user = Socialite::driver('github')->user();
+        // dd($user);
 
         $this->_registerOrLoginUser($user);
 

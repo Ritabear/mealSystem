@@ -23,6 +23,8 @@ Route::get('/index', function () {
     return view('index');
 });
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Auth::routes();
 
 // Google login
@@ -57,12 +59,8 @@ Route::get('/addGoods', [PosController::class, 'addGoods']);
 
 */
 // 404 跳回首頁
-Route::fallback(function () {
-    var_dump('<script>alert("404");</script>');
+// Route::fallback(function () {
+//     var_dump('<script>alert("404");</script>');
 
-    return redirect();
-});
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//     return redirect();
+// });
