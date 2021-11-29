@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Third Party Services
@@ -31,9 +30,20 @@ return [
     ],
     //新增google
     'google' => [
-        'client_id' => env('666552167161-keapbcebp9tt9moq2s4dltqqmn1h605g.apps.googleusercontent.com'),
-        'client_secret' => env('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'),
-        'redirect' => 'http://localhost:8000/google/auth',
+        'client_id' => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect' => 'http://localhost/laravel-socialite/public/login/google/callback',
     ],
-
+        //新增facebook
+    'facebook' => [
+        'client_id' => env('FACEBOOK_CLIENT_ID'),
+        'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
+        'redirect' => 'http://localhost/laravel-socialite/public/login/facebook/callback',
+    ],
+        //新增github
+    'github' => [
+        'client_id' => env('GITHUB_CLIENT_ID'),
+        'client_secret' => env('GITHUB_CLIENT_SECRET'),
+        'redirect' => 'http://localhost/laravel-socialite/public/login/github/callback',
+    ],
 ];
